@@ -8,10 +8,16 @@ Minimal Docker Compose setup for the plain `osrf/ros:humble-desktop-full` image,
 
 ## Usage
 
-Start the container:
+Build and start the container:
 
 ```sh
 docker compose run --rm ros2
 ```
 
-This pulls the image (if not already present) and drops you into a shell inside the container.
+This builds the image (a thin layer over `osrf/ros:humble-desktop-full` that just sources `/opt/ros/humble/setup.bash` on login, no extra installs) and drops you into a shell where `ros2` commands work.
+
+To open another shell in the same running container:
+
+```sh
+docker exec -it ros2-humble bash
+```

@@ -1,6 +1,7 @@
 services:
   ros2:
     container_name: ros2-humble
-    image: osrf/ros:humble-desktop-full
+    build:
+      context: .
     stdin_open: true
     tty: true
